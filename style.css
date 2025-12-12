@@ -270,3 +270,26 @@ nav a:hover {
     grid-template-columns: 1fr;
   }
 }
+/* Sticky header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  backdrop-filter: blur(8px);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+  background-color: rgba(255, 255, 255, 0); /* fully transparent at top */
+}
+
+/* When scrolled */
+header.scrolled {
+  background-color: rgba(255, 255, 255, 0.75); /* translucent white */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);   /* subtle shadow */
+  padding: 20px 80px; /* shrink slightly on scroll */
+}
+
+/* Adjust body content so header doesn't overlap */
+body {
+  padding-top: 120px; /* matches your header height */
+}
